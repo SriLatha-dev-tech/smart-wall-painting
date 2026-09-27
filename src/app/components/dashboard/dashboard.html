@@ -1,0 +1,218 @@
+<div class="dashboard-container">
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+
+    <div class="logo">
+      🎨 Smart Wall Paint Visualizer
+    </div>
+
+    <div class="nav-links">
+
+      <a routerLink="/dashboard">
+        Dashboard
+      </a>
+
+      <a routerLink="/upload-room">
+        Upload Room
+      </a>
+
+      <a routerLink="/saved-designs">
+        Saved Designs
+      </a>
+
+      <a routerLink="/login">
+        Logout
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+
+    <h1>
+      Welcome to Smart Wall Paint Visualizer 🎨
+    </h1>
+
+    <p>
+      Visualize your room with different paint colours and
+      designs before actually painting your walls.
+    </p>
+
+    <button
+      class="main-upload-button"
+      routerLink="/upload-room">
+
+      📷 Upload Room Image
+
+    </button>
+
+  </section>
+
+
+  <!-- Recent Projects -->
+  <section class="recent-projects">
+
+    <h2>
+      Recent Projects
+    </h2>
+
+    <p class="section-description">
+      Your recently created room designs will appear here.
+    </p>
+
+
+    <div class="empty-projects">
+
+      <div class="empty-icon">
+        🏠
+      </div>
+
+      <h3>
+        No projects available yet
+      </h3>
+
+      <p>
+        Upload your first room image to start designing.
+      </p>
+
+      <button
+        class="upload-first-button"
+        routerLink="/upload-room">
+
+        Upload Your First Room
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- Quick Actions -->
+  <section class="quick-actions">
+
+    <h2>
+      Quick Actions
+    </h2>
+
+    <div class="action-grid">
+
+
+      <!-- Upload Room -->
+      <div class="action-card">
+
+        <div class="action-icon">
+          📷
+        </div>
+
+        <h3>
+          Upload Room
+        </h3>
+
+        <p>
+          Upload a photo of your room and start designing.
+        </p>
+
+        <button
+          routerLink="/upload-room">
+
+          Upload Room
+
+        </button>
+
+      </div>
+
+
+      <!-- Explore Colours -->
+      <div class="action-card">
+
+        <div class="action-icon">
+          🎨
+        </div>
+
+        <h3>
+          Explore Colours
+        </h3>
+
+        <p>
+          Explore different paint colours for your walls.
+        </p>
+
+        <button
+          routerLink="/colour-preview">
+
+          Explore Colours
+
+        </button>
+
+      </div>
+
+
+      <!-- Saved Designs -->
+      <div class="action-card">
+
+        <div class="action-icon">
+          💾
+        </div>
+
+        <h3>
+          Saved Designs
+        </h3>
+
+        <p>
+          View and manage your previously saved designs.
+        </p>
+
+        <button
+          routerLink="/saved-designs">
+
+          View Saved Designs
+
+        </button>
+
+      </div>
+
+
+      <!-- How It Works -->
+      <div class="action-card">
+
+        <div class="action-icon">
+          ℹ️
+        </div>
+
+        <h3>
+          How It Works
+        </h3>
+
+        <p>
+          Learn how to create your virtual room design.
+        </p>
+
+        <button
+          routerLink="/upload-room">
+
+          Get Started
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+
+    <p>
+      © 2026 Smart Wall Paint Visualizer
+    </p>
+
+  </footer>
+
+</div>

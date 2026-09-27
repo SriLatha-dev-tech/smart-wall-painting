@@ -1,0 +1,116 @@
+/* Design Section */
+
+.design-heading {
+  margin-top: 25px !important;
+  margin-bottom: 15px;
+}
+
+
+/* Design Grid */
+
+.design-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+
+/* Design Option */
+
+.design-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 8px;
+
+  border: 2px solid #ddd;
+  border-radius: 8px;
+
+  background: white;
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  transition: 0.2s;
+}
+
+.design-option:hover {
+  border-color: #1976d2;
+}
+
+.design-option.selected {
+  border-color: #1976d2;
+  background: #eef6ff;
+}
+
+
+/* Design Icon */
+
+.design-icon {
+  font-size: 20px;
+  color: #1976d2;
+}
+
+
+/* Before / After */
+
+.preview-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0 20px;
+}
+
+.preview-button {
+  padding: 10px 25px;
+
+  border: 2px solid #1976d2;
+  border-radius: 7px;
+
+  background: white;
+  color: #1976d2;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.preview-button:hover {
+  background: #eef6ff;
+}
+
+.preview-button.active {
+  background: #1976d2;
+  color: white;
+}
+
+
+/* Preview Status */
+
+.preview-status {
+  margin: 12px 0 0;
+
+  text-align: center;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+.preview-status strong {
+  color: #1976d2;
+}
+
+
+/* Mobile Design Grid */
+
+@media (max-width: 600px) {
+
+  .design-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

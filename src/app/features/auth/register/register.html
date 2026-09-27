@@ -1,0 +1,140 @@
+<div class="register-container">
+
+  <div class="register-card">
+
+    <h2>Create Account</h2>
+
+    <p class="subtitle">
+      Register to continue
+    </p>
+
+    <form (ngSubmit)="register()">
+
+      <!-- Name -->
+      <div class="form-group">
+
+        <label for="name">
+          Name
+        </label>
+
+        <input
+          id="name"
+          type="text"
+          name="name"
+          [(ngModel)]="name"
+          placeholder="Enter your name"
+          autocomplete="name"
+          required
+        />
+
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+
+        <label for="email">
+          Email
+        </label>
+
+        <input
+          id="email"
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          placeholder="Enter your email"
+          autocomplete="email"
+          required
+        />
+
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+
+        <label for="password">
+          Password
+        </label>
+
+        <input
+          id="password"
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          placeholder="Enter your password"
+          autocomplete="new-password"
+          required
+        />
+
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="form-group">
+
+        <label for="confirmPassword">
+          Confirm Password
+        </label>
+
+        <input
+          id="confirmPassword"
+          type="password"
+          name="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          placeholder="Confirm your password"
+          autocomplete="new-password"
+          required
+        />
+
+      </div>
+
+      <!-- Error -->
+      @if (errorMessage) {
+        <div class="error-message">
+          {{ errorMessage }}
+
+          @if (errorMessage.includes('already registered')) {
+            <br />
+
+            <a routerLink="/login">
+              Login here
+            </a>
+          }
+        </div>
+      }
+
+      <!-- Success -->
+      @if (successMessage) {
+        <div class="success-message">
+          {{ successMessage }}
+        </div>
+      }
+
+      <!-- Register Button -->
+      <button
+        type="submit"
+        [disabled]="isLoading"
+      >
+        @if (isLoading) {
+          Creating Account...
+        } @else {
+          Register
+        }
+      </button>
+
+    </form>
+
+    <!-- Login Link -->
+    <div class="login-link">
+
+      <span>
+        Already have an account?
+      </span>
+
+      <a routerLink="/login">
+        Login
+      </a>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,137 @@
+<div class="wall-selection-container">
+
+  <h1>Select Wall Area</h1>
+
+  <p class="description">
+    Click around the wall to create a selection.
+  </p>
+
+  <div class="editor-area">
+
+    <!-- Image / Canvas -->
+    <div class="image-area">
+
+      <div class="canvas-container">
+
+        <canvas
+          #wallCanvas
+          (click)="addPoint($event)">
+        </canvas>
+
+      </div>
+
+    </div>
+
+
+    <!-- Tools -->
+    <div class="tools-panel">
+
+      <h2>Selection Tools</h2>
+
+      <p class="tool-description">
+        Click points around the wall.
+        Select at least 3 points.
+      </p>
+
+
+      <!-- Clear Selection -->
+      <button
+        class="tool-button"
+        type="button"
+        (click)="clearSelection()">
+
+        Clear Selection
+
+      </button>
+
+
+      <!-- Undo Last Point -->
+      <button
+        class="tool-button"
+        type="button"
+        (click)="undoLastPoint()">
+
+        Undo Last Point
+
+      </button>
+
+
+      <!-- Finish Selection -->
+      <button
+        class="tool-button primary"
+        type="button"
+        (click)="finishPolygon()">
+
+        Finish Selection
+
+      </button>
+
+
+      <!-- Continue -->
+      <button
+        class="tool-button primary"
+        type="button"
+        (click)="continueToColour()">
+
+        Continue →
+
+      </button>
+
+
+      <!-- Back -->
+      <button
+        class="tool-button secondary"
+        type="button"
+        routerLink="/upload-room">
+
+        ← Back
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Instructions -->
+  <div class="instructions">
+
+    <h3>How to select a wall</h3>
+
+    <ol>
+
+      <li>
+        Click on the first corner of the wall.
+      </li>
+
+      <li>
+        Click on the second corner.
+      </li>
+
+      <li>
+        Continue clicking around the wall.
+      </li>
+
+      <li>
+        If you make a mistake, click
+        <strong>Undo Last Point</strong>.
+      </li>
+
+      <li>
+        Select at least three points.
+      </li>
+
+      <li>
+        Click <strong>Finish Selection</strong>.
+      </li>
+
+      <li>
+        Click <strong>Continue →</strong>
+        to choose a colour.
+      </li>
+
+    </ol>
+
+  </div>
+
+</div>

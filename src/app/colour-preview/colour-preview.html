@@ -1,0 +1,221 @@
+<div class="colour-preview-container">
+
+  <h1>🎨 Colour & Design Preview</h1>
+
+  <p class="description">
+    Choose a colour and design to preview your wall.
+  </p>
+
+  <div class="preview-layout">
+
+    <!-- ROOM PREVIEW -->
+
+    <div class="preview-card">
+
+      <h2>Room Preview</h2>
+
+      <!-- Before / After -->
+
+      <div class="preview-toggle">
+
+        <button
+          type="button"
+          class="preview-button"
+          [class.active]="previewMode === 'before'"
+          (click)="showBefore()">
+
+          Before
+
+        </button>
+
+        <button
+          type="button"
+          class="preview-button"
+          [class.active]="previewMode === 'after'"
+          (click)="showAfter()">
+
+          After
+
+        </button>
+
+      </div>
+
+      <!-- Canvas -->
+
+      <canvas
+        #previewCanvas>
+      </canvas>
+
+      <p class="preview-status">
+
+        Showing:
+
+        <strong>
+          {{ previewMode === 'before'
+            ? 'Original Room'
+            : 'Painted / Designed Room' }}
+        </strong>
+
+      </p>
+
+      <p class="selected-colour">
+
+        Selected Colour:
+
+        <strong>
+          {{ selectedColorName }}
+        </strong>
+
+      </p>
+
+    </div>
+
+
+    <!-- CONTROL PANEL -->
+
+    <div class="colour-panel">
+
+      <!-- COLOURS -->
+
+      <h2>Choose a Colour</h2>
+
+      <div class="colour-grid">
+
+        <button
+          *ngFor="let color of colors"
+          type="button"
+          class="colour-option"
+          [class.selected]="selectedColor === color.code"
+          (click)="selectColor(color.code, color.name)">
+
+          <span
+            class="colour-circle"
+            [style.background-color]="color.code">
+          </span>
+
+          <span class="colour-name">
+            {{ color.name }}
+          </span>
+
+        </button>
+
+      </div>
+
+
+      <!-- DESIGNS -->
+
+      <h2 class="design-heading">
+        Choose a Design
+      </h2>
+
+      <div class="design-grid">
+
+        <button
+          *ngFor="let design of designs"
+          type="button"
+          class="design-option"
+          [class.selected]="selectedDesign === design.type"
+          (click)="selectDesign(design.type)">
+
+          <span class="design-icon">
+
+            <span
+              *ngIf="design.type === 'solid'">
+              ■
+            </span>
+
+            <span
+              *ngIf="design.type === 'stripes'">
+              ▥
+            </span>
+
+            <span
+              *ngIf="design.type === 'dots'">
+              ⠿
+            </span>
+
+            <span
+              *ngIf="design.type === 'grid'">
+              ▦
+            </span>
+
+          </span>
+
+          <span>
+            {{ design.name }}
+          </span>
+
+        </button>
+
+      </div>
+
+
+      <!-- OPACITY -->
+
+      <div class="opacity-section">
+
+        <label for="opacity">
+          Paint Opacity
+        </label>
+
+        <input
+          id="opacity"
+          type="range"
+          min="20"
+          max="100"
+          [value]="paintOpacity * 100"
+          (input)="changeOpacity($event)"
+        />
+
+        <span>
+          {{ paintOpacity * 100 | number:'1.0-0' }}%
+        </span>
+
+      </div>
+
+
+      <!-- SAVE -->
+
+      <button
+        type="button"
+        class="save-button"
+        (click)="saveDesign()">
+
+        💾 Save Design
+
+      </button>
+
+
+      <!-- BACK -->
+
+      <button
+        type="button"
+        class="back-button"
+        (click)="goBack()">
+
+        ← Back to Wall Selection
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- INFORMATION -->
+
+  <div class="info-box">
+
+    <h3>Preview Information</h3>
+
+    <p>
+      Choose a colour and design and use the
+      <strong>Before</strong> and <strong>After</strong>
+      buttons to compare your room.
+      The final appearance may vary depending on
+      lighting, wall texture, and screen settings.
+    </p>
+
+  </div>
+
+</div>

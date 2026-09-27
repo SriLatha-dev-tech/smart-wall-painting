@@ -1,0 +1,52 @@
+.navbar {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 15px 30px;
+
+  background-color: #1976d2;
+
+  color: white;
+
+}
+
+
+.logo {
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+}
+
+
+.menu a {
+
+  color: white;
+
+  margin: 0 10px;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+}
+
+
+.user-section button {
+
+  margin-left: 15px;
+
+  padding: 8px 15px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+}

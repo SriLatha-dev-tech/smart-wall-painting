@@ -1,0 +1,190 @@
+<div class="saved-designs-page">
+
+  <h1>💾 Saved Designs</h1>
+
+  <p>
+    View and manage your saved room paint designs.
+  </p>
+
+  <button
+    class="dashboard-button"
+    (click)="goToDashboard()">
+    ← Dashboard
+  </button>
+
+
+  <!-- SAVED DESIGNS -->
+
+  <div class="designs-container">
+
+    <h2>
+      Saved Designs ({{ savedDesigns.length }})
+    </h2>
+
+
+    <div
+      *ngFor="let design of savedDesigns"
+      class="design-card">
+
+
+      <!-- Header -->
+
+      <div class="design-header">
+
+        <div>
+
+          <h2>
+            {{ design.name }}
+          </h2>
+
+          <p *ngIf="design.createdAt">
+            Created:
+            {{ design.createdAt | date:'medium' }}
+          </p>
+
+        </div>
+
+
+        <div
+          class="colour-preview"
+          [style.background-color]="design.colour || '#ffffff'">
+        </div>
+
+      </div>
+
+
+      <!-- Details -->
+
+      <div class="design-details">
+
+        <div class="detail">
+
+          <span class="label">
+            Project Name
+          </span>
+
+          <span>
+            {{ design.name }}
+          </span>
+
+        </div>
+
+
+        <div class="detail">
+
+          <span class="label">
+            Colour
+          </span>
+
+          <span>
+            {{ design.colour || 'Not selected' }}
+          </span>
+
+        </div>
+
+
+        <div class="detail">
+
+          <span class="label">
+            Wall
+          </span>
+
+          <span>
+            {{ design.wall ? 'Selected' : 'Not selected' }}
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ROOM IMAGE -->
+
+      <div
+        class="room-image"
+        *ngIf="design.roomImage">
+
+        <img
+          [src]="design.roomImage"
+          alt="Saved room design">
+
+      </div>
+
+
+      <!-- ACTION BUTTONS -->
+
+      <div class="design-actions">
+
+        <button
+          class="view-button"
+          (click)="openColourPreview()">
+
+          🎨 Open Design
+
+        </button>
+
+
+        <button
+          class="delete-button"
+          *ngIf="design._id"
+          (click)="deleteDesign(design._id!)">
+
+          🗑️ Delete
+
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- EMPTY STATE -->
+
+  <div
+    *ngIf="savedDesigns.length === 0"
+    class="empty-state">
+
+    <div class="empty-icon">
+      💾
+    </div>
+
+    <h2>
+      No Saved Designs
+    </h2>
+
+    <p>
+      You haven't saved any room designs yet.
+    </p>
+
+    <button
+      class="create-button"
+      (click)="openColourPreview()">
+
+      🎨 Create a Design
+
+    </button>
+
+  </div>
+
+
+  <!-- ABOUT -->
+
+  <div class="about-saved-designs">
+
+    <h3>
+      About Saved Designs
+    </h3>
+
+    <p>
+      Your saved designs are stored in MongoDB.
+      Each design contains the project name,
+      selected paint colour, wall selection and
+      room image.
+    </p>
+
+  </div>
+
+</div>

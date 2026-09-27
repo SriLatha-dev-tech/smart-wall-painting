@@ -1,0 +1,54 @@
+<div class="upload-container">
+
+  <h1>Upload Room Image</h1>
+
+  <p>
+    Upload a clear photo of your room to visualize different wall colours.
+  </p>
+
+  <div class="upload-box">
+
+    <label for="roomImage" class="upload-button">
+      Choose Room Image
+    </label>
+
+    <input
+      id="roomImage"
+      type="file"
+      accept="image/png, image/jpeg"
+      (change)="onFileSelected($event)"
+      hidden
+    />
+
+    <p>Supported formats: JPG, JPEG, PNG</p>
+
+  </div>
+
+  <div *ngIf="imagePreview" class="preview-section">
+
+    <h2>Image Preview</h2>
+
+    <img
+      [src]="imagePreview"
+      alt="Room Preview"
+      class="room-preview"
+    />
+
+  </div>
+
+  <div class="buttons">
+
+    <button routerLink="/dashboard">
+      ← Back to Dashboard
+    </button>
+
+    <button
+      *ngIf="imagePreview"
+      routerLink="/wall-selection"
+    >
+      Continue →
+    </button>
+
+  </div>
+
+</div>
