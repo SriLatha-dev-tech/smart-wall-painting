@@ -1,19 +1,21 @@
-<div class="login-container">
-
+<div class="login-page">
   <div class="login-card">
+    <div class="brand-header">
+      <h2>🎨 Smart Wall Paint Visualizer</h2>
+      <p>Transform your space with the perfect color</p>
+    </div>
 
-    <h2>Smart Wall Paint Visualizer</h2>
-    <h3>Login</h3>
+    <h3>Welcome Back</h3>
 
     <form (ngSubmit)="login()">
-
       <div class="form-group">
-        <label>Email</label>
+        <label>Email Address</label>
         <input 
           type="email"
           [(ngModel)]="email"
           name="email"
-          placeholder="Enter your email">
+          placeholder="Enter your email"
+          required>
       </div>
 
       <div class="form-group">
@@ -22,22 +24,17 @@
           type="password"
           [(ngModel)]="password"
           name="password"
-          placeholder="Enter your password">
+          placeholder="Enter your password"
+          required>
       </div>
 
-      <button type="submit">
-        Login
+      <button type="submit" class="submit-btn">
+        Login to Visualizer
       </button>
 
-      <p>
-        New user?
-        <a routerLink="/register">
-          Register here
-        </a>
-      </p>
-
+      <div class="register-redirect">
+        <p>New user? <a routerLink="/register">Register here</a></p>
+      </div>
     </form>
-
   </div>
-
 </div>

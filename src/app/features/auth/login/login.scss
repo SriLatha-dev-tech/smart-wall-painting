@@ -1,56 +1,102 @@
-.login-container {
-  min-height: 100vh;
+.login-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f4f4f4;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 
 .login-card {
-  width: 350px;
-  padding: 30px;
-  background: white;
+  background: #ffffff;
+  padding: 40px 30px;
   border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-
-h2,
-h3 {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
-}
 
+  .brand-header {
+    margin-bottom: 25px;
 
-.form-group {
-  margin-bottom: 15px;
-}
+    h2 {
+      color: #333;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
 
+    p {
+      color: #666;
+      font-size: 13px;
+    }
+  }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-}
+  h3 {
+    color: #444;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
 
+  .form-group {
+    text-align: left;
+    margin-bottom: 20px;
 
-input {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.3s ease;
 
-button {
-  width: 100%;
-  padding: 12px;
-  background: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+      &:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+      }
+    }
+  }
 
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    margin-top: 10px;
 
-button:hover {
-  background: #125aa0;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .register-redirect {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+
+    a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
