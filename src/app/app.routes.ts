@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { LoginComponent } from './login/login';
-import { AuthGuard } from './auth-guard';
+import { authGuard } from './auth-guard';
 
 export const routes: Routes = [
   {
@@ -22,7 +22,7 @@ export const routes: Routes = [
       import('./components/dashboard/dashboard').then(
         m => m.Dashboard
       ),
-    canActivate: [AuthGuard]
+    canActivate: [authGuard]
   },
 
   {
@@ -31,7 +31,7 @@ export const routes: Routes = [
       import('./upload-room/upload-room').then(
         m => m.UploadRoomComponent
       ),
-    canActivate: [AuthGuard]
+    canActivate: [authGuard]
   },
 
   {
@@ -40,7 +40,7 @@ export const routes: Routes = [
     import('./wall-selection/wall-selection').then(
       m => m.WallSelection
     ),
-  canActivate: [AuthGuard]
+  canActivate: [authGuard]
 },
   {
     path: 'colour-preview',
@@ -48,7 +48,7 @@ export const routes: Routes = [
       import('./colour-preview/colour-preview').then(
         m => m.ColourPreview
       ),
-    canActivate: [AuthGuard]
+    canActivate: [authGuard]
   },
 
   {
@@ -57,7 +57,7 @@ export const routes: Routes = [
       import('./saved-designs/saved-designs').then(
         m => m.SavedDesigns
       ),
-    canActivate: [AuthGuard]
+    canActivate: [authGuard]
   }
 ];
 
