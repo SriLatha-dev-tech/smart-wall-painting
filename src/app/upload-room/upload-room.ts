@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './upload-room.html',
   styleUrl: './upload-room.scss'
 })
-export class UploadRoom {
+export class UploadRoomComponent {
 
   imagePreview: string | ArrayBuffer | null = null;
 
