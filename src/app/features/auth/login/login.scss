@@ -1,41 +1,62 @@
-.login-page {
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
 }
 
 .login-card {
   background: #ffffff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   width: 100%;
-  max-width: 400px;
-  text-align: center;
+  max-width: 440px;
+  transition: transform 0.3s ease;
 
-  .brand-header {
-    margin-bottom: 25px;
+  .brand-section {
+    text-align: center;
+    margin-bottom: 30px;
+
+    .logo-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+      display: inline-block;
+      background: #f3f4f6;
+      padding: 12px;
+      border-radius: 50%;
+    }
 
     h2 {
-      color: #333;
-      font-size: 22px;
-      margin-bottom: 5px;
+      color: #1f2937;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
 
     p {
-      color: #666;
-      font-size: 13px;
+      color: #6b7280;
+      font-size: 14px;
     }
   }
 
-  h3 {
-    color: #444;
-    font-size: 18px;
-    margin-bottom: 20px;
-    font-weight: 600;
+  .form-header {
+    margin-bottom: 24px;
+
+    h3 {
+      color: #111827;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    p {
+      color: #6b7280;
+      font-size: 13px;
+    }
   }
 
   .form-group {
@@ -45,52 +66,99 @@
     label {
       display: block;
       margin-bottom: 8px;
-      color: #555;
-      font-size: 14px;
-      font-weight: 500;
+      color: #374151;
+      font-size: 13px;
+      font-weight: 600;
     }
 
-    input {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-size: 14px;
-      outline: none;
-      transition: all 0.3s ease;
+    .input-with-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
 
-      &:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+      .icon {
+        position: absolute;
+        left: 14px;
+        font-size: 16px;
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 15px 12px 42px;
+        border: 1.5px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #1f2937;
+        outline: none;
+        transition: all 0.2s ease;
+        background: #f9fafb;
+
+        &:focus {
+          border-color: #4f46e5;
+          background: #ffffff;
+          box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+        }
+      }
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 24px;
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #4b5563;
+      cursor: pointer;
+    }
+
+    .forgot-link {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
 
   .submit-btn {
     width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 13px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: opacity 0.3s ease;
-    margin-top: 10px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
 
     &:hover {
-      opacity: 0.9;
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
     }
   }
 
   .register-redirect {
-    margin-top: 20px;
+    margin-top: 24px;
+    text-align: center;
     font-size: 14px;
-    color: #666;
+    color: #6b7280;
 
     a {
-      color: #667eea;
+      color: #4f46e5;
       text-decoration: none;
       font-weight: 600;
 

@@ -17,17 +17,14 @@ export class Login {
   constructor(private router: Router) {}
 
   login() {
-    // Basic validation check
     if (!this.email || !this.password) {
       alert('Please fill in both email and password.');
       return;
     }
 
-    // Here you can add your backend authentication logic
-    // For now, it redirects to the dashboard successfully
     console.log('Logging in with:', this.email);
     
-    // Set a dummy auth state if needed (e.g., sessionStorage)
+    // Set auth state
     sessionStorage.setItem('isLoggedIn', 'true');
 
     // Navigate to dashboard
