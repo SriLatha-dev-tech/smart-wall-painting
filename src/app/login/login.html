@@ -1,24 +1,71 @@
-<div>
+<div class="login-wrapper">
+  <!-- Left Side: Brand & Visual Banner -->
+  <div class="brand-side">
+    <div class="brand-content">
+      <div class="logo-badge">🎨</div>
+      <h1>Smart Wall Paint Visualizer</h1>
+      <p>Transform your space digitally. Preview thousands of colors and textures on your walls in real-time before painting.</p>
+      <div class="features-list">
+        <div class="feature-item"><span>✨</span> AI-Powered Color Matching</div>
+        <div class="feature-item"><span>🛋️</span> Real-time Room Simulation</div>
+        <div class="feature-item"><span>💾</span> Save & Compare Palettes</div>
+      </div>
+    </div>
+  </div>
 
-<h2>Login</h2>
+  <!-- Right Side: Login Form Card -->
+  <div class="form-side">
+    <div class="login-card">
+      <div class="form-header">
+        <h2>Welcome Back! 👋</h2>
+        <p>Please enter your credentials to access your dashboard.</p>
+      </div>
 
+      <form (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-box">
+            <span class="icon">✉️</span>
+            <input 
+              type="email" 
+              id="email"
+              [(ngModel)]="email" 
+              name="email" 
+              placeholder="name@example.com" 
+              required>
+          </div>
+        </div>
 
-<input 
-type="email"
-placeholder="Email"
-[(ngModel)]="email">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-box">
+            <span class="icon">🔒</span>
+            <input 
+              type="password" 
+              id="password"
+              [(ngModel)]="password" 
+              name="password" 
+              placeholder="Enter your secure password" 
+              required>
+          </div>
+        </div>
 
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" name="remember"> Keep me signed in
+          </label>
+          <a routerLink="/forgot-password" class="forgot-link">Forgot password?</a>
+        </div>
 
-<input 
-type="password"
-placeholder="Password"
-[(ngModel)]="password">
+        <button type="submit" class="submit-btn" [disabled]="isLoading">
+          <span *ngIf="!isLoading">Sign In to Workspace</span>
+          <span *ngIf="isLoading">Authenticating...</span>
+        </button>
 
-
-<button (click)="login()">
-Login
-</button>
-
-
+        <div class="register-redirect">
+          <p>Don't have an account yet? <a routerLink="/register">Register Now</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-

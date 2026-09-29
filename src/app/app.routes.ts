@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-import { LoginComponent } from './login/login';
+import { Login } from './login/login';
 import { authGuard } from './auth-guard';
 
 export const routes: Routes = [
@@ -12,7 +12,7 @@ export const routes: Routes = [
 
   {
     path: 'login',
-    component: LoginComponent
+    component: Login
   },
 
   
